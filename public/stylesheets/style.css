@@ -32,15 +32,17 @@ header nav .top-li .bot-line{
   top: 25px;
   left: 0px;
   bottom: 0px;
-  width: calc(100% - 75%);
+  width: 0%;
   height: 3px;
   background: #fff;
   /* transform: scale(0,1);
-  transform-origin: 0px 50% 0px;
-  transition: all 250ms ease 0s; */
+  transform-origin: 0px 50% 0px;*/
+  transition: all 250ms ease 0s;
+
 }
-.top-li:hover{
-  opacity: .2;
+.top-li:hover .bot-line{
+  width: calc(100% - 75%);
+  //opacity: .2;
 }
 section{
   clear: both;
@@ -131,4 +133,84 @@ section{
 .btn:hover{
   opacity: .5;
   border-radius: 10px;
+}
+
+@media (max-width: 968px) {
+
+  header h1{
+    float: none;
+    font-size: 60px;
+    font-weight: bolder;
+    font-family: 'monotype corsiva';
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  header nav{
+    float: none;
+  }
+  header nav ul{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  header nav .top-li{
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    padding: 10px;
+  }
+  header nav .top-li .bot-line{
+    position: absolute;
+    top: 40px;
+    left: 10px;
+    bottom: 0px;
+    width: 0%;
+    height: 3px;
+    background: #fff;
+  }
+  section {
+    width: 80%;
+    margin: 50px auto;
+  }
+  .box .inputbox input,
+  .box .inputbox textarea{
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  header nav .top-li{
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    font-size: 10px;
+  }
+  header nav .top-li .bot-line{
+    position: absolute;
+    top: 35px;
+    left: 10px;
+    bottom: 0px;
+    width: 0%;
+    height: 3px;
+    background: #fff;
+  }
+  .btn{
+    padding: 9px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  header nav .top-li{
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    padding: 0px;
+    padding-right: 10px;
+    font-size: 10px;
+  }
+  header nav .top-li .bot-line{
+    top: 20px;
+    left: 0px;
+  }
 }
