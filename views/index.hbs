@@ -1,0 +1,87 @@
+<div class="container">
+  <header>
+    <h1>To-do</h1>
+    <nav>
+      <ul>
+        <li class="top-li" id="myPlaylist">
+          my playlist
+          <span class="bot-line"></span>
+        </li>
+        <li class="top-li" id="newPlaylist">
+          Create new playlist
+            <span class="bot-line"></span>
+        </li>
+        <li class="top-li" id="updatePlaylist">
+          Update playlist
+            <span class="bot-line"></span>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+
+
+  <section class="get" id="myList">
+      <a href="/get-data">LOAD DATA</a>
+      <div>
+          {{# each items }}
+              <article class="item">
+                  <div>ID: {{ this._id }}</div>
+                  <div>Title: {{ this.title }}</div>
+                  <div>Content: {{ this.content }}</div>
+                  <div class="btn-bl">
+                    <a href='edit-list'><button type="submit" name="edit" class="btn-info" >Edit</button></a>
+                    <a href='delete-list'><button type="submit" name="edit" class="btn-warning" >Delete</button></a>
+
+                  </div>
+                  <span class="clear"></span>
+              </article>
+          {{/each}}
+      </div>
+  </section>
+
+  <section id="newList">
+    <div>
+      <p>Hello, what are your plans?</p>
+    </div>
+    <div class="box">
+      <form class="" action="/insert" method="post">
+        <div class="inputbox">
+          <input type="text" name="title" required>
+          <label for="title">Title</label>
+        </div>
+        <div class="inputbox">
+          <textarea name="content" rows="6" cols="80" required></textarea>
+          <label for="content">Content</label>
+        </div>
+        <button type="submit" name="button" class="btn">Add to list</button>
+      </form>
+
+    </div>
+  </section>
+
+
+  <section id="updateList">
+    <div>
+      <p>Hey, you are trying to make a change to your playlist. Note that changes made will affect your previous playlist.</p>
+    </div>
+    <div class="box">
+      <form class="" action="/updateList" method="post">
+        <div class="inputbox">
+          <input type="text" name="id" required>
+          <label for="id">Id</label>
+        </div>
+        <div class="inputbox">
+          <input type="text" name="title" required>
+          <label for="title">Title</label>
+        </div>
+        <div class="inputbox">
+          <textarea name="content" rows="6" cols="80" required></textarea>
+          <label for="content">Content</label>
+        </div>
+        <button type="submit" name="button" class="btn">Save update</button>
+      </form>
+    </div>
+  </section>
+</div>
+<script src="./javascripts/script.js" charset="utf-8"></script>
